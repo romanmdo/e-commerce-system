@@ -1,0 +1,77 @@
+{% extends "commerce/base_template.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- Search Bar -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="max-w-2xl mx-auto">
+            <div class="relative">
+                <input type="text" id="search-input" placeholder="Buscar productos..." class="w-full px-4 py-3 pl-10 pr-12 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-1 rounded-full text-sm font-medium transition-colors">
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-6">
+        <h1 class="text-2xl font-bold mb-8 relative inline-block">
+            ¡Últimas novedades!
+            <span class="absolute left-0 bottom-[-8px] w-16 h-[3px] bg-primary-600"></span>
+        </h1>
+        
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for producto in productos %}
+                <div class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 glow-effect">
+                    <div class="p-4">
+                        <div class="relative aspect-square mb-4 overflow-hidden">
+                            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="img-fluid w-full h-full object-contain transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">{{ producto.nombre }}</h2>
+                        <p class="text-xl font-bold text-primary-600 dark:text-primary-400 mt-2">${{ producto.precio }}</p>
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end opacity-0 transition-opacity group-hover:opacity-100 p-6">
+                            <p class="text-white text-sm">{{ producto.descripcion }}</p>
+                        </div>
+                    </div>
+        
+                    <div class="p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <button onclick="addToCart('{{ producto.id }}')" class="w-full py-2 px-4 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-medium flex items-center justify-center transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <h1 class="text-2xl font-bold mt-16 mb-8 relative inline-block">
+            Categorías Destacadas
+            <span class="absolute left-0 bottom-[-8px] w-16 h-[3px] bg-primary-600"></span>
+        </h1>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="#" class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 flex flex-col items-center text-center shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-24 h-24 mb-4 relative">
+                    <img src="{% static 'commerce/galery/brands/nike-logo.png' %}" alt="Nike" class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Nike</h3>
+                <div class="mt-auto">
+                    <div class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium">
+                        <span>Ver productos</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+{% endblock %}
+

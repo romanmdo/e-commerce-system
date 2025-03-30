@@ -1,0 +1,227 @@
+/* Estilos CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+}
+
+.carousel {
+  margin-top: 1%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  transition: transform 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  transform: scale(1.2);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+#buscador {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--card-shadow);
+}
+
+#buscador:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.2);
+}
+
+.text {
+  margin: 2rem 0 1rem 1rem;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+.text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.papa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.hijo,
+.hijo2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(25% - 1.5rem);
+  min-width: 220px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.hijo:hover,
+.hijo2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hijo-precio {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0.75rem 0;
+}
+
+.item {
+  font-size: 1.1rem;
+  margin: 0.75rem 0;
+  font-weight: 600;
+}
+
+.hijo img,
+.hijo2 img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.hijo img:hover,
+.hijo2 img:hover {
+  transform: scale(1.1);
+}
+
+.hijo figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hijo:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 992px) {
+  .hijo,
+  .hijo2 {
+    width: calc(33.333% - 1.5rem);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hijo,
+  .hijo2 {
+    width: calc(50% - 1.5rem);
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hijo,
+  .hijo2 {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .search-container {
+    padding: 0 1rem;
+  }
+
+  .text {
+    font-size: 1.25rem;
+    margin-left: 1rem;
+  }
+}
+

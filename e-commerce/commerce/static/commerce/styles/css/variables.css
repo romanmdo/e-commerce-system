@@ -1,0 +1,33 @@
+:root {
+    /* Main colors */
+    --background: #f8f9fa;
+    --background-dark: #121212;
+    --primary: #4a6cf7;
+    --primary-dark: #3a56d4;
+    --secondary: #2a2a2a;
+  
+    /* Text colors */
+    --text: #333333;
+    --text-dark: #ffffff;
+    --text-secondary: #666666;
+    --text-secondary-dark: #a0a0a0;
+  
+    /* Border colors */
+    --border-color: #e0e0e0;
+    --border-color-dark: #333333;
+  
+    /* UI elements */
+    --navbar-height: 4rem;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition-speed: 0.3s;
+  
+    /* Dark mode overrides - will be applied when .dark class is added to an element */
+    .dark {
+      --background: var(--background-dark);
+      --text: var(--text-dark);
+      --text-secondary: var(--text-secondary-dark);
+      --border-color: var(--border-color-dark);
+    }
+  }
+  
+  

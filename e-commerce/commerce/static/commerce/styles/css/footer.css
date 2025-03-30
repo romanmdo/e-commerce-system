@@ -1,0 +1,138 @@
+.footer {
+    width: 100%;
+    color: var(--text);
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    padding: 3rem 0;
+    margin-top: 4rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .footer-column h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .footer-column h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: #4a6cf7;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-column ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #4a6cf7;
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+  }
+  
+  .footer-bottom h6 {
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+    filter: invert(100%);
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background-color: #4a6cf7;
+    transform: translateY(-3px);
+  }
+  
+  .social-icon:hover img {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+  
+    .footer-column {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .social-icons {
+      margin-top: 1rem;
+    }
+  }
+  
+  
