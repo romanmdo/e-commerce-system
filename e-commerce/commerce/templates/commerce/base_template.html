@@ -14,56 +14,62 @@
             theme: {
                 extend: {
                     colors: {
+                        background: '#f6f0e8', /* Beige cálido */
+                        'background-dark': '#151312', /* Negro chocolate mate */
                         primary: {
-                            50: '#f0f7ff',
-                            100: '#e0eefe',
-                            200: '#bae0fd',
-                            300: '#7cc8fb',
-                            400: '#36aaf5',
-                            500: '#0d8de3',
-                            600: '#0070cc',
-                            700: '#0059a6',
-                            800: '#064b87',
-                            900: '#0a3f70',
-                            950: '#07294d',
+                            DEFAULT: '#5b3a29', /* Marrón chocolate */
+                            50: '#f9f5f2',
+                            100: '#f0e8e1',
+                            200: '#e2d0c3',
+                            300: '#d0b3a0',
+                            400: '#b68e75',
+                            500: '#9c7259',
+                            600: '#8a5e45',
+                            700: '#724c39',
+                            800: '#5b3a29', /* Marrón chocolate */
+                            900: '#442b1d', /* Marrón más intenso */
+                            950: '#2a1b12',
                         },
                         secondary: {
-                            50: '#f5f5f6',
-                            100: '#e5e6e8',
-                            200: '#cfd1d5',
-                            300: '#aeb2b9',
-                            400: '#868c97',
-                            500: '#6b717d',
-                            600: '#5a5f6b',
-                            700: '#4a4e58',
-                            800: '#40444c',
-                            900: '#383b42',
-                            950: '#24262c',
+                            DEFAULT: '#312e2b', /* Gris marrón oscuro */
+                            50: '#f6f5f5',
+                            100: '#e7e5e4',
+                            200: '#d3cfc9',
+                            300: '#b7b0a8',
+                            400: '#9a9088',
+                            500: '#8b7467', /* Marrón suave */
+                            600: '#6d5c51',
+                            700: '#574a41',
+                            800: '#3b2d25', /* Marrón oscuro */
+                            900: '#312e2b', /* Gris marrón oscuro */
+                            950: '#1a1816',
                         },
+                        text: '#3b2d25', /* Marrón oscuro */
+                        'text-dark': '#ffffff',
+                        'text-secondary': '#8b7467', /* Marrón suave */
+                        'text-secondary-dark': '#c7b3a6',
+                        'border-color': '#d6c5b6',
+                        'border-color-dark': '#4a3d36',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['"Roboto Mono"', 'monospace'],
                     },
                     boxShadow: {
-                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'card': '0 6px 10px rgba(0, 0, 0, 0.12)',
+                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',
                     },
                 },
             },
         }
     </script>
     
-    
-    <style>
-
-    </style>
-    
     <!-- Styles -->
     <link rel="stylesheet" href="{% static 'commerce/styles/css/header-nav.css' %}">
     <link rel="stylesheet" href="{% static 'commerce/styles/css/section.css' %}">
     <link rel="stylesheet" href="{% static 'commerce/styles/css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'commerce/styles/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'commerce/styles/css/glow.css' %}">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,58 +78,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="{% static 'assets/ICO.png' %}"> -->
+    <link rel="shortcut icon" href="{% static 'commerce/galery/brands/system-logo.png' %}">
     
-    <title>Ecommerce · {% block title %}Inicio{% endblock %}</title>
+    <title>Ecommerce · Inicio</title>
 </head>
 
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col">
+<body class="bg-background dark:bg-background-dark text-text dark:text-text-dark font-sans min-h-screen flex flex-col">
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <header class="sticky top-0 z-50 bg-white dark:bg-secondary shadow-sm border-b border-border-color dark:border-border-color-dark">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="/" class="flex items-center">
-                    <img src="{% static 'assets/LOGO-2.png' %}" alt="TechStore" class="h-8">
+                <a href="/" class="flex items-center logo">
+                    <img src="{% static 'commerce/galery/brands/system-logo.png' %}" alt="E-commerce" >
                 </a>
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6">
                     <div class="relative dropdown-trigger">
-                        <button class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">
+                        <button class="flex items-center text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark font-medium">
                             Categorías
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 p-2">
-                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
-                                <div class="font-medium">Zapatillas</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">¡Las mejores zapas!</div>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-secondary ring-1 ring-black ring-opacity-5 p-2">
+                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-background dark:hover:bg-secondary-800">
+                                <div class="font-medium">Remeras</div>
+                                <div class="text-xs text-text-secondary dark:text-text-secondary-dark">Todas las remeras del local!</div>
                             </a>
-                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-background dark:hover:bg-secondary-800">
+                                <div class="font-medium">Pantalones</div>
+                                <div class="text-xs text-text-secondary dark:text-text-secondary-dark">Todos los pantalones del local!</div>
+                            </a>
+                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-background dark:hover:bg-secondary-800">
                                 <div class="font-medium">Gorras</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">¡Las mejores gorras!</div>
+                                <div class="text-xs text-text-secondary dark:text-text-secondary-dark">Todas las gorras del local!</div>
                             </a>
-                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
-                                <div class="font-medium">Prendas</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">¡Las mejores prendas!</div>
-                            </a>
-                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
-                                <div class="font-medium">Accesorios</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">¡Los mejores accesorios!</div>
+                            <a href="#" class="block px-4 py-2 rounded-md hover:bg-background dark:hover:bg-secondary-800">
+                                <div class="font-medium">Zapatillas</div>
+                                <div class="text-xs text-text-secondary dark:text-text-secondary-dark">Todas las zapatillas del local!</div>
                             </a>
                         </div>
                     </div>
-                    <a href="#catalogo" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Catálogo</a>
-                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Sobre nosotros</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Contacto</a>
+                    <a href="#catalogo" class="text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark font-medium">Catálogo</a>
+                    <a href="#about" class="text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark font-medium">Sobre nosotros</a>
+                    <a href="#contact" class="text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark font-medium">Contacto</a>
                 </nav>
                 
                 <!-- Right Side Actions -->
                 <div class="flex items-center space-x-4">
                     <!-- Login Button -->
-                    <a href="/login" class="hidden md:flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <a href="/login" class="hidden md:flex items-center px-4 py-2 border border-border-color dark:border-border-color-dark rounded-full text-sm font-medium text-text dark:text-text-dark hover:border-primary hover:text-primary dark:hover:text-text-secondary-dark transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
@@ -131,15 +137,15 @@
                     </a>
                     
                     <!-- Cart -->
-                    <a href="/cart" class="relative p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <a href="/cart" class="relative p-2 text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-primary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
                     </a>
                     
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <button id="theme-toggle" class="p-2 text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">
                         <!-- Sun icon (shown in dark mode) -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -151,7 +157,7 @@
                     </button>
                     
                     <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-text dark:text-text-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -160,24 +166,24 @@
             </div>
             
             <!-- Mobile Menu (hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-border-color dark:border-border-color-dark">
                 <div class="space-y-1 px-2">
-                    <button id="mobile-categories-button" class="w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium flex justify-between items-center">
+                    <button id="mobile-categories-button" class="w-full text-left px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800 font-medium flex justify-between items-center">
                         Categorías
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
                     <div id="mobile-categories-menu" class="hidden pl-4 space-y-1 mt-1">
-                        <a href="#" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Hardware</a>
-                        <a href="#" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Mouses</a>
-                        <a href="#" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Auriculares</a>
-                        <a href="#" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Teclados</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800">Hardware</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800">Mouses</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800">Auriculares</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800">Teclados</a>
                     </div>
-                    <a href="#catalogo" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Catálogo</a>
-                    <a href="#about" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Sobre nosotros</a>
-                    <a href="#contact" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Contacto</a>
-                    <a href="/login" class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Iniciar sesión</a>
+                    <a href="#catalogo" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800 font-medium">Catálogo</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800 font-medium">Sobre nosotros</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800 font-medium">Contacto</a>
+                    <a href="/login" class="block px-3 py-2 rounded-md text-text dark:text-text-dark hover:bg-background dark:hover:bg-secondary-800 font-medium">Iniciar sesión</a>
                 </div>
             </div>
         </div>
@@ -187,10 +193,10 @@
     <div id="main-carousel" class="relative overflow-hidden">
         <div class="carousel-inner flex transition-transform duration-500">
             <div class="carousel-item w-full flex-shrink-0">
-                <img src="{% static 'commerce/galery/carrousel/carrousel-1.jpg' %}" alt="carrousel-1" class="w-full h-auto object-cover">
+                <img src="{% static 'commerce/galery/carrousel/carrousel-1.jpeg' %}" alt="carrousel-1" class="w-full h-auto object-cover">
             </div>
             <div class="carousel-item w-full flex-shrink-0">
-                <img src="{% static 'commerce/galery/carrousel/carrousel-1.jpg' %}" alt="carrousel-2" class="w-full h-auto object-cover">
+                <img src="{% static 'commerce/galery/carrousel/carrousel-1.jpeg' %}" alt="carrousel-2" class="w-full h-auto object-cover">
             </div>
             <div class="carousel-item w-full flex-shrink-0">
                 <img src="{% static 'commerce/galery/carrousel/carrousel-1.jpg' %}" alt="carrousel-3" class="w-full h-auto object-cover">
@@ -216,98 +222,96 @@
             <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-colors" data-slide="2"></button>
         </div>
     </div>
-    
-    <!-- Main Content -->
+
     <main class="flex-grow container mx-auto px-4 py-6">
         {% block content %}{% endblock %}
-    </main>
+    </main> 
     
     <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
+    <footer class="bg-background dark:bg-secondary border-t border-border-color dark:border-border-color-dark mt-12">
         <div class="container mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Products Column -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white relative inline-block">
+                    <h4 class="text-lg font-bold text-text dark:text-text-dark relative inline-block">
                         Productos
-                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary-600"></span>
+                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary"></span>
                     </h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Hardware</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Periféricos</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Componentes</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Accesorios</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Remeras</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Pantalones</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Gorras</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Zapatillas</a></li>
                     </ul>
                 </div>
                 
                 <!-- Categories Column -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white relative inline-block">
+                    <h4 class="text-lg font-bold text-text dark:text-text-dark relative inline-block">
                         Categorías
-                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary-600"></span>
+                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary"></span>
                     </h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Intel</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">AMD</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">NVIDIA</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Razer</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Nike</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Adidas</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Vans</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">DC Shoes</a></li>
                     </ul>
                 </div>
                 
                 <!-- Support Column -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white relative inline-block">
+                    <h4 class="text-lg font-bold text-text dark:text-text-dark relative inline-block">
                         Soporte
-                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary-600"></span>
+                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary"></span>
                     </h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Centro de ayuda</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contacto</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Devoluciones</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Estado de pedido</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Centro de ayuda</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Contacto</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Devoluciones</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Estado de pedido</a></li>
                     </ul>
                 </div>
                 
                 <!-- Company Column -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white relative inline-block">
+                    <h4 class="text-lg font-bold text-text dark:text-text-dark relative inline-block">
                         Empresa
-                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary-600"></span>
+                        <span class="absolute left-0 bottom-[-8px] w-10 h-[2px] bg-primary"></span>
                     </h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Sobre nosotros</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Trabaja con nosotros</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Prensa</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Sobre nosotros</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Trabaja con nosotros</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-text-secondary-dark transition-colors">Prensa</a></li>
                     </ul>
                 </div>
             </div>
             
             <!-- Footer Bottom -->
-            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
-                <p class="text-sm text-gray-600 dark:text-gray-400">Copyright © 2024 TechStore. Todos los derechos reservados.</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Av. Caseros 3039, Piso 2, CP 1264, Parque Patricios, CABA</p>
+            <div class="mt-12 pt-8 border-t border-border-color dark:border-border-color-dark text-center">
+                <p class="text-sm text-text-secondary dark:text-text-secondary-dark">Copyright © 2024 E-commerce. Todos los derechos reservados.</p>
+                <p class="text-sm text-text-secondary dark:text-text-secondary-dark mt-1">Av. Caseros 3039, Piso 2, CP 1264, Parque Patricios, CABA</p>
                 
                 <!-- Social Icons -->
                 <div class="flex justify-center mt-6 space-x-4">
-                    <a href="https://www.instagram.com/" target="_blank" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.
-                            196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    <a href="https://www.instagram.com/" target="_blank" class="bg-background dark:bg-secondary-800 p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-secondary dark:text-text-secondary-dark hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                     </a>
-                    <a href="https://twitter.com/" target="_blank" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="https://twitter.com/" target="_blank" class="bg-background dark:bg-secondary-800 p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-secondary dark:text-text-secondary-dark hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
                         </svg>
                     </a>
-                    <a href="https://github.com/" target="_blank" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="https://github.com/" target="_blank" class="bg-background dark:bg-secondary-800 p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-secondary dark:text-text-secondary-dark hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/" target="_blank" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="https://linkedin.com/" target="_blank" class="bg-background dark:bg-secondary-800 p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-secondary dark:text-text-secondary-dark hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
                         </svg>
                     </a>
@@ -456,9 +460,5 @@
             }
         });
     </script>
-    
-    <!-- Additional scripts -->
-    {% block scripts %}{% endblock %}
 </body>
 </html>
-

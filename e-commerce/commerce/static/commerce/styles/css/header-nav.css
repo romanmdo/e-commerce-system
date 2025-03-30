@@ -1,3 +1,10 @@
+@import url('/commerce/static/commerce/styles/css/variables.css');
+
+.logo{
+  display: inline-flex;
+  max-width: 60px;
+}
+
 body {
     background-color: var(--background);
     overflow-x: hidden;
@@ -16,17 +23,7 @@ body {
     top: 0;
     z-index: 1000;
   }
-  
-  .logo {
-    max-width: 140px;
-  }
-  
-  .log {
-    display: inline-flex;
-    max-width: 18px;
-    margin-right: 6px;
-  }
-  
+
   .carrito {
     display: inline-flex;
     max-width: 20px;

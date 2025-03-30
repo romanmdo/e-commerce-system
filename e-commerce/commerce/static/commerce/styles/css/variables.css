@@ -1,33 +1,23 @@
-:root {
-    /* Main colors */
-    --background: #f8f9fa;
-    --background-dark: #121212;
-    --primary: #4a6cf7;
-    --primary-dark: #3a56d4;
-    --secondary: #2a2a2a;
-  
-    /* Text colors */
-    --text: #333333;
-    --text-dark: #ffffff;
-    --text-secondary: #666666;
-    --text-secondary-dark: #a0a0a0;
-  
-    /* Border colors */
-    --border-color: #e0e0e0;
-    --border-color-dark: #333333;
-  
-    /* UI elements */
-    --navbar-height: 4rem;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --transition-speed: 0.3s;
-  
-    /* Dark mode overrides - will be applied when .dark class is added to an element */
-    .dark {
-      --background: var(--background-dark);
-      --text: var(--text-dark);
-      --text-secondary: var(--text-secondary-dark);
-      --border-color: var(--border-color-dark);
-    }
-  }
-  
-  
+:root { 
+  /* Main colors */
+  --background: #f6f0e8; /* Beige cálido */
+  --background-dark: #151312; /* Negro chocolate mate */
+  --primary: #5b3a29; /* Marrón chocolate */
+  --primary-dark: #442b1d; /* Marrón más intenso */
+  --secondary: #312e2b; /* Gris marrón oscuro */
+
+  /* Text colors */
+  --text: #3b2d25; /* Marrón oscuro */
+  --text-dark: #ffffff;
+  --text-secondary: #8b7467; /* Marrón suave */
+  --text-secondary-dark: #c7b3a6;
+
+  /* Border colors */
+  --border-color: #d6c5b6;
+  --border-color-dark: #4a3d36;
+
+  /* UI elements */
+  --navbar-height: 4rem;
+  --card-shadow: 0 6px 10px rgba(0, 0, 0, 0.12);
+  --transition-speed: 0.3s;
+}

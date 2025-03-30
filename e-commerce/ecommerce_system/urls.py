@@ -6,7 +6,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("inicio/", views.lista_productos, name="lista_productos"),
+
+    # | Manejo de productos destacados y carga de productos 
+    #   mediante el panel de admin de Django | 
+
+    path("inicio/", views.lista_destacados, name="lista_destacados"),
 ]
 
 if settings.DEBUG:
